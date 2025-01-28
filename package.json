@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "Tampermonkey template for TypeScript",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "ts-node src/main.ts"
+    "start": "ts-node --esm src/main.mts"
   },
   "repository": {
     "type": "git",
