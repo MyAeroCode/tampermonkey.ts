@@ -1,3 +1,5 @@
+import 'dotenv/config';
+
 import { babel } from '@rollup/plugin-babel';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import nodeResolve from '@rollup/plugin-node-resolve';
@@ -7,7 +9,7 @@ import typescript from '@rollup/plugin-typescript';
 import * as fs from 'fs';
 import * as path from 'path';
 
-const USER_SCRIPT_NAME = 'HelloWorld';
+const USER_SCRIPT_NAME = process.env['USER_SCRIPT_NAME'];
 const USER_SCRIPT_ROOT = path.resolve('src/userScripts', USER_SCRIPT_NAME);
 
 export default {

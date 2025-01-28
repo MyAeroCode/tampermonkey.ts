@@ -30,6 +30,7 @@
     "@types/node": "^22.12.0",
     "@types/tampermonkey": "^5.0.4",
     "babel-loader": "^9.2.1",
+    "dotenv": "^16.4.7",
     "rollup": "^4.32.1",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "ts-node": "^10.9.2",
