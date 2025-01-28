@@ -4,12 +4,18 @@ import nodeResolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import typescript from '@rollup/plugin-typescript';
 
+import * as fs from 'fs';
+import * as path from 'path';
+
+const USER_SCRIPT_NAME = 'HelloWorld';
+const USER_SCRIPT_ROOT = path.resolve('src/userScripts', USER_SCRIPT_NAME);
+
 export default {
-    input: './src/main.mts',
+    input: path.resolve(USER_SCRIPT_ROOT, 'main.mts'),
     output: {
-        file: './dist/bundle.js',
+        file: `./dist/${USER_SCRIPT_NAME}.js`,
         format: 'esm',
-        banner: ['//hello', '//world'].join('\n'),
+        banner: fs.readFileSync(path.resolve(USER_SCRIPT_ROOT, 'header.mts'), 'utf-8'),
     },
     plugins: [
         peerDepsExternal(),
