@@ -1,3 +1,7 @@
 import { hello } from './library.mjs';
 
-hello('World');
+async function main() {
+    hello('World');
+}
+
+main();
