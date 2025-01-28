@@ -9,8 +9,8 @@ import typescript from '@rollup/plugin-typescript';
 import * as fs from 'fs';
 import * as path from 'path';
 
-const USER_SCRIPT_NAME = process.env['USER_SCRIPT_NAME'];
-const USER_SCRIPT_ROOT = path.resolve('src/userScripts', USER_SCRIPT_NAME);
+const USER_SCRIPT_NAME: string = process.env['USER_SCRIPT_NAME']!;
+const USER_SCRIPT_ROOT: string = path.resolve('src/userScripts', USER_SCRIPT_NAME);
 
 export default {
     input: path.resolve(USER_SCRIPT_ROOT, 'main.mts'),
@@ -28,6 +28,6 @@ export default {
             extensions: ['.js', '.mjs', '.ts', '.mts'],
             presets: ['@babel/env', '@babel/preset-typescript'],
         }),
-        typescript(), 
+        typescript(),
     ],
 };
